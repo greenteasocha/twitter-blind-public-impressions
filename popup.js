@@ -7,7 +7,7 @@ document.getElementById("btn").addEventListener("click", async () => {
 });
 
 function onRun() {
-  document.body.style.backgroundColor = "#fcc";
+  //   document.body.style.backgroundColor = "#fcc";
   //   var elem = document.getElementById("short_cur_key");
   //   console.log(elem);
 
@@ -16,14 +16,22 @@ function onRun() {
   //   );
   //   var elem = getByTestId("app-text-transition-container");
 
-  var elem = document.querySelector("span[app-text-transition-container]");
-  var elem = document.querySelector("span[data-testid]");
+  //   var element = document.querySelector("span[app-text-transition-container]");
+  var elements = document.querySelectorAll("span[data-testid]");
 
-  console.log(elem);
+  console.log(elements);
 
-  var cnt = elem.firstElementChild.firstElementChild;
-  console.log(cnt);
-  cnt.innerHTML = "";
+  elements.forEach((element) => {
+    console.log(element);
+    var viewCountSpan = element.firstElementChild.firstElementChild;
+    if (viewCountSpan != null) {
+      console.log(viewCountSpan);
+      viewCountSpan.innerHTML = "";
+    }
+  });
+  //   var cnt = elem.firstElementChild.firstElementChild;
+  //   console.log(cnt);
+  //   cnt.innerHTML = "";
   return;
   if (elem !== null && elem.length > 1) {
     console.log(elem[0]);
